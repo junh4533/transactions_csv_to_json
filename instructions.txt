@@ -1,0 +1,84 @@
+Attached are 2 files:
+
+1. `users.csv`. This contains a list of users including their ID, name, and
+   email address.
+2. `transactions.csv`. This contains a list of transactions, including an ID, a
+   user ID, and an amount. The user ID here refers to an ID of a user in the
+  `users.csv` file.
+
+Complete the following three tasks in order:
+
+First, parse the user CSV into JSON. The expected output is a JSON array with
+a JSON object for each user.
+
+An abbreviated result looks like this:
+
+```
+[
+  {
+    "id": 12411824,
+    "name": "Hilary Gulgowski PhD",
+    "email": "ilana.mayert@kuhn-green.org"
+  }
+]
+```
+
+Second, include an array of transaction objects on each user object. The
+transaction objects should include all transactions for the user that are
+included in `transactions.csv`.
+
+An abbreviated result looks like this:
+
+```
+[
+  {
+    "id": 12411824,
+    "name": "Hilary Gulgowski PhD",
+    "email": "ilana.mayert@kuhn-green.org",
+    "transactions": [
+      {
+        "id": 1128,
+        "amount": 646.11
+      },
+      {
+        "id": 1950,
+        "amount": 914.49
+      },
+      {
+        "id": 2722,
+        "amount": 234.55
+      }
+    ]
+  }
+]
+```
+
+Finally, add a balance to the user object. This should be the sum of the amounts
+for all of the user's transactions.
+
+An abbreviated result looks like this:
+
+```
+[
+  {
+    "id": 12411824,
+    "name": "Hilary Gulgowski PhD",
+    "email": "ilana.mayert@kuhn-green.org",
+    "balance": 1795.15,
+    "transactions": [
+      {
+        "id": 1128,
+        "amount": 646.11
+      },
+      {
+        "id": 1950,
+        "amount": 914.49
+      },
+      {
+        "id": 2722,
+        "amount": 234.55
+      }
+    ]
+  }
+]
+```
